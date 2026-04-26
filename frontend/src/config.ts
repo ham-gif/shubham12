@@ -9,10 +9,11 @@ export const ORIGINAL_TOKEN_B_ID = "CDTMHS477DKY2GZG6PQL5U7KGBST4B3IAVRBQMOXTP3V
 // ─── SDKE Issuer for Classic Asset (wallet visibility only) ───────────────
 // This is separate from the pool tokens. Used by the Faucet to send
 // a Classic SDKE asset that shows up in Freighter.
-export const SDKE_ISSUER_SECRET = "SCK6O7B6ZBGBKIFNWA5BTRRF7SO23MIZSEFQRBQV5OV5LOVCO5HO4JUD";
+export const SDKE_ISSUER_SECRET = import.meta.env.VITE_SDKE_ISSUER_SECRET || "";
 export const SDKE_ISSUER_PUBLIC = "GBZOLFASCCGMZHWKMF5GVEDEXTV2HD2W3BKW6SP5D5CPKQ3T75T36I5G";
 // Alias for use in balance hooks
 export const SDKE_ISSUER = SDKE_ISSUER_PUBLIC;
+
 
 // ─── Classic Stellar Assets (for Freighter wallet visibility) ─────────────
 export const XLM_ASSET = Asset.native();
@@ -26,10 +27,11 @@ export const CONFIG = {
   TOKEN_A_ID: ORIGINAL_TOKEN_A_ID,
   TOKEN_B_ID: ORIGINAL_TOKEN_B_ID,
   LP_TOKEN_ID: "CBFJJZXDFRUB66WI65J7QYUVASB63IX2JMNPJRFTGGYWZNQ6JJASW6R4",
-  SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org",
-  HORIZON_URL: "https://horizon-testnet.stellar.org",
+  SOROBAN_RPC_URL: import.meta.env.VITE_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org",
+  HORIZON_URL: import.meta.env.VITE_HORIZON_URL || "https://horizon-testnet.stellar.org",
   NETWORK_PASSPHRASE: "Test SDF Network ; September 2015",
-  NETWORK: "testnet" as const,
+  NETWORK: (import.meta.env.VITE_NETWORK as "testnet") || "testnet",
+
   STELLAR_EXPERT_BASE: "https://stellar.expert/explorer/testnet",
   STROOPS_PER_XLM: 10_000_000,
   DEFAULT_SLIPPAGE_BPS: 50,
