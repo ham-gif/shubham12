@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-slate-200 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .aura-bg {
+    @apply fixed inset-0 pointer-events-none;
+    background: radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.1), transparent 70%);
+  }
+
+  .crystal-glass {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50;
+  }
+
+  .crystal {
+    @apply relative overflow-hidden backdrop-blur-2xl bg-surface border border-white/5 shadow-2xl;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .crystal::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-50;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+  }
+
+  .glass-input {
+    @apply bg-white/5 border border-white/10 rounded-2xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-all font-medium;
+  }
+
+  .btn-aura {
+    @apply relative overflow-hidden bg-primary text-white font-bold rounded-2xl px-6 py-4 transition-all active:scale-95 shadow-[0_0_40px_rgba(139,92,246,0.3)] flex items-center justify-center gap-2;
+  }
+
+  .btn-aura:disabled {
+    @apply opacity-50 shadow-none cursor-not-allowed;
+  }
+
+  .btn-aura::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite];
+  }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
