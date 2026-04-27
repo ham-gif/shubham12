@@ -129,3 +129,43 @@ fn test_swap_insufficient_amount_out() {
     token_a.mint(&creator, &trader, &100);
     pool.swap(&trader, &token_a_id, &100, &1000); // Expecting 1000 but only ~96 will be out
 }
+
+#[test]
+fn test_swap_quote_and_stats() {
+    let env = Env::default();
+    env.mock_all_auths();
+    let creator = Address::generate(&env);
+    let token_a_id = env.register_contract_wasm(None, TokenWasm);
+    let token_b_id = env.register_contract_wasm(None, TokenWasm);
+    let lp_token_id = env.register_contract_wasm(None, TokenWasm);
+    let pool_id = env.register_contract(None, PoolContract);
+    let pool = PoolContractClient::new(&env, &pool_id);
+
+    let token_a = TokenClient::new(&env, &token_a_id);
+    token_a.initialize(&creator, &creator, &String::from_str(&env, "A"), &String::from_str(&env, "A"), &7);
+    let token_b = TokenClient::new(&env, &token_b_id);
+    token_b.initialize(&creator, &creator, &String::from_str(&env, "B"), &String::from_str(&env, "B"), &7);
+    let lp_token = TokenClient::new(&env, &lp_token_id);
+    lp_token.initialize(&creator, &pool_id, &String::from_str(&env, "LP"), &String::from_str(&env, "LP"), &7);
+
+    pool.initialize(&creator, &token_a_id, &token_b_id, &lp_token_id, &30);
+
+    token_a.mint(&creator, &creator, &1000);
+    token_b.mint(&creator, &creator, &1000);
+    pool.add_liquidity(&creator, &1000, &1000, &0);
+
+    // Test quote
+    let quote = pool.get_swap_quote(&token_a_id, &100);
+    assert!(quote.amount_out > 0);
+    assert_eq!(quote.amount_in, 100);
+
+    // Perform swap to update stats
+    let trader = Address::generate(&env);
+    token_a.mint(&creator, &trader, &100);
+    pool.swap(&trader, &token_a_id, &100, &0);
+
+    let (swap_count, vol_a, vol_b) = pool.get_stats();
+    assert_eq!(swap_count, 1);
+    assert_eq!(vol_a, 100);
+    assert_eq!(vol_b, 0);
+}
