@@ -47,20 +47,24 @@ The NovaDEX features a bespoke design system called **Cyber-Holographic**, which
 ## 📸 Screenshots
 
 ### Desktop Dashboard
+
 ![Dashboard](public/screenshots/dashboard.png)
 
-### Feature Showcase
 
-| Swap Interface | Swap Details | Swap Successful |
-| :---: | :---: | :---: |
-| ![Swap Interface](public/screenshots/swap_interface.png) | ![Swap Details](public/screenshots/swap_details.png) | ![Swap Successful](public/screenshots/swap_success.png) |
+### Swap Interface
 
-| Add Liquidity | Liquidity Success | Mobile View |
-| :---: | :---: | :---: |
-| ![Add Liquidity](public/screenshots/liquidity_add_freighter.png) | ![Liquidity Success](public/screenshots/liquidity_success.png) | ![Mobile View](public/screenshots/mobile.png) |
+![Swap Interface](public/screenshots/swap_interface.png)
+
+
+### Add Liquidity
+
+![Add Liquidity](public/screenshots/provide_liquidity.png)
+
 
 ### Video Walkthrough
+
 ![Demo Walkthrough](public/screenshots/demo.gif)
+
 
 ## 🧪 Testing
 
