@@ -7,31 +7,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#020617", // Deep Obsidian
-        surface: "rgba(15, 23, 42, 0.4)", // Frosted Slate
-        border: "rgba(148, 163, 184, 0.1)",
+        background: "#080711", // Deep Space Carbon
+        surface: "rgba(18, 16, 38, 0.6)", // Holographic Dark Slate
+        border: "rgba(0, 240, 255, 0.15)", // Glowing Cyan Border
         primary: {
-          DEFAULT: "#8B5CF6", // Violet
-          hover: "#7C3AED",
+          DEFAULT: "#ff007a", // Neon Pink
+          hover: "#d40066",
         },
         secondary: {
-          DEFAULT: "#3B82F6", // Blue
-          hover: "#2563EB",
+          DEFAULT: "#00f0ff", // Neon Cyan
+          hover: "#00c8d4",
         },
-        accent: "#06B6D4", // Cyan
-        success: "#10B981",
-        warning: "#F59E0B",
-        danger: "#EF4444",
-        tokenA: "#22C55E",
-        tokenB: "#3B82F6",
-        lpToken: "#8B5CF6",
+        accent: "#8a2be2", // Electric Purple
+        success: "#00ff88", // Neon Green
+        warning: "#ffaa00",
+        danger: "#ff0055",
+        tokenA: "#ff007a", // Match primary
+        tokenB: "#00f0ff", // Match secondary
+        lpToken: "#8a2be2", // Match accent
       },
       fontFamily: {
         sans: ["Outfit", "Inter", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       backgroundImage: {
-        'aura-gradient': "radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.05), transparent 70%)",
+        'nova-gradient': "radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.05), transparent 70%)",
         'crystal-card': "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%)",
       },
       animation: {

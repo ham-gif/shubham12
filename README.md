@@ -1,13 +1,13 @@
-# Aura DEX | Next-Gen Soroban AMM
+# NovaDEX | Next-Gen Soroban AMM
 
 ![CI Status](https://github.com/shivaywww-design/Aura-Dex/actions/workflows/ci.yml/badge.svg)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-blue?style=for-the-badge&logo=vercel)](https://aura-dex-gamma.vercel.app/)
 
-A high-fidelity, mobile-responsive Decentralized Exchange (DEX) built on **Stellar Soroban**. This application implements a Constant Product Automated Market Maker (AMM) that allows users to swap between **Native XLM** and **Aura Engine (SDKE)** tokens using Stellar Asset Contracts (SAC).
+A high-fidelity, mobile-responsive Decentralized Exchange (DEX) built on **Stellar Soroban**. This application implements a Constant Product Automated Market Maker (AMM) that allows users to swap between **Native XLM** and **Nova Engine (SDKE)** tokens using Stellar Asset Contracts (SAC).
 
 ## 🚀 Key Features
 
-- **Aura Glass UI**: A premium, frosted-glass interface optimized for visual clarity and performance.
+- **Cyber-Holographic UI**: A sharp, high-tech interface optimized for visual excellence and performance.
 - **Soroban AMM**: Constant product liquidity pool (`x * y = k`) implemented in Rust/Soroban.
 - **Freighter Wallet Integration**: Seamless signing and balance reflection via StellarWalletsKit.
 - **Wallet-Centric Assets**: Swaps happen directly between your Freighter "Classic" balances via SAC wrappers.
@@ -15,13 +15,13 @@ A high-fidelity, mobile-responsive Decentralized Exchange (DEX) built on **Stell
 - **Built-in Faucet**: Instantly fund your Testnet account with SDKE assets.
 - **Mobile Responsive**: Fully optimized for trading on the go.
 
-## 🎨 Aura Glass Design System
+## 🎨 Cyber-Holographic Design System
 
-The Aura DEX features a bespoke design system called **Aura Glass**, which emphasizes:
-- **Glassmorphism Primitives**: Heavy use of backdrop-blurs and semi-transparent layers to create depth.
-- **Aurora Gradients**: Dynamic, animated background meshes that react to user presence.
+The NovaDEX features a bespoke design system called **Cyber-Holographic**, which emphasizes:
+- **Sharp Geometries**: Moving away from soft rounded corners to intentional, high-tech edges.
+- **Cyberpunk Palette**: Heavy use of Neon Pink, Neon Cyan, and Electric Purple.
+- **Glowing Accents**: Subtle micro-animations and glow effects that make the interface feel alive.
 - **High-Contrast Obsidian Theme**: Optimized for long-session trading comfort.
-- **Typography**: Powered by the **Outfit** font family for a modern, futuristic feel.
 
 
 ## 🛠 Tech Stack
@@ -38,35 +38,29 @@ The Aura DEX features a bespoke design system called **Aura Glass**, which empha
 |-----------|----------------|
 | **Liquidity Pool** | `CAW3SDKUYBQTMCSH4UWLPG27BQYQGWHQU32MOWP7PG6KRTO7CYKPDYOC` |
 | **Native XLM (SAC)** | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` |
-| **Aura Engine (SDKE)** | `CCUUYZWLVQ4QLFFPE4CBGTP7Q6JSPZ7HF54ETS5C2BSG7XPG4KLX6SFH` |
+| **Nova Engine (SDKE)** | `CCUUYZWLVQ4QLFFPE4CBGTP7Q6JSPZ7HF54ETS5C2BSG7XPG4KLX6SFH` |
 | **SDKE Asset Issuer** | `GBZOLFASCCGMZHWKMF5GVEDEXTV2HD2W3BKW6SP5D5CPKQ3T75T36I5G` |
 | **Initialization TX** | [View on Stellar Expert](https://stellar.expert/explorer/testnet/tx/88f280e28f322316e2f16805d76d494883445839999778278278278278278278) |
+
+
 
 ## 📸 Screenshots
 
 ### Desktop Dashboard
-![Dashboard](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/dashboard.png)
+![Dashboard](public/screenshots/dashboard.png)
 
 ### Feature Showcase
 
-| Swap Interface | Swap Success |
-| :---: | :---: |
-| ![Swap Interface](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/swap_interface.png) | ![Swap Success](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/swap_complete.png) |
+| Swap Interface | Swap Details | Swap Successful |
+| :---: | :---: | :---: |
+| ![Swap Interface](public/screenshots/swap_interface.png) | ![Swap Details](public/screenshots/swap_details.png) | ![Swap Successful](public/screenshots/swap_success.png) |
 
-| Liquidity Provision | Inventory Update |
-| :---: | :---: |
-| ![Provide Liquidity](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/provide_liquidity.png) | ![Inventory Updated](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/inventory_updated.png) |
-
-| Live Activity Tracking |
-| :---: |
-| ![Live Activity](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/live_activity.png) |
-
-### Mobile Responsive View
-![Mobile](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/mobile.png)
+| Add Liquidity | Liquidity Success | Mobile View |
+| :---: | :---: | :---: |
+| ![Add Liquidity](public/screenshots/liquidity_add_freighter.png) | ![Liquidity Success](public/screenshots/liquidity_success.png) | ![Mobile View](public/screenshots/mobile.png) |
 
 ### Video Walkthrough
-![Demo Walkthrough](https://raw.githubusercontent.com/shivaywww-design/Aura-Dex/main/public/screenshots/demo.gif)
-
+![Demo Walkthrough](public/screenshots/demo.gif)
 
 ## 🧪 Testing
 
@@ -88,8 +82,8 @@ cargo test --workspace
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/shivaywww-design/Aura-Dex.git
-   cd Aura-Dex/frontend
+   git clone https://github.com/shivaywww-design/NovaDEX.git
+   cd NovaDEX/frontend
    ```
 
 2. **Install dependencies**:

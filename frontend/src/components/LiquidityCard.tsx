@@ -36,19 +36,19 @@ export const LiquidityCard: React.FC = () => {
 
 
   return (
-    <div className="crystal rounded-[2.5rem] p-8 space-y-8 relative overflow-hidden">
+    <div className="crystal rounded-2xl p-8 space-y-8 relative overflow-hidden border-secondary/20 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
       <div className="flex justify-between items-center px-1">
         <div className="flex items-center gap-2">
-          <Droplets className="w-4 h-4 text-primary" />
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Pool Management</span>
+          <Droplets className="w-4 h-4 text-secondary" />
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-300">Pool Management</span>
         </div>
         
-        <div className="flex bg-white/5 p-1 rounded-2xl border border-white/5">
+        <div className="flex bg-[#080711]/80 p-1 rounded-xl border border-secondary/30">
           <button
             onClick={() => setTab("add")}
             className={cn(
-              "px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all",
-              tab === "add" ? "bg-primary text-white shadow-lg" : "text-slate-500 hover:text-slate-300"
+              "px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all",
+              tab === "add" ? "bg-gradient-to-r from-primary to-accent text-white shadow-[0_0_15px_rgba(255,0,122,0.3)]" : "text-slate-500 hover:text-slate-300"
             )}
           >
             Add
@@ -56,8 +56,8 @@ export const LiquidityCard: React.FC = () => {
           <button
             onClick={() => setTab("remove")}
             className={cn(
-              "px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all",
-              tab === "remove" ? "bg-danger text-white shadow-lg" : "text-slate-500 hover:text-slate-300"
+              "px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all",
+              tab === "remove" ? "bg-danger text-white shadow-[0_0_15px_rgba(255,0,85,0.3)]" : "text-slate-500 hover:text-slate-300"
             )}
           >
             Remove
@@ -67,80 +67,80 @@ export const LiquidityCard: React.FC = () => {
 
       {tab === "add" ? (
         <div className="space-y-6">
-          <div className="space-y-2">
+          <div className="space-y-3">
             {/* Input A */}
-            <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Deposit {TOKENS.TOKEN_A.symbol}</p>
+            <div className="bg-[#080711]/60 border border-secondary/20 rounded-xl p-6 transition-all focus-within:border-secondary/50">
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Deposit {TOKENS.TOKEN_A.symbol}</p>
               <div className="flex items-center justify-between gap-4">
                 <input
                   type="number"
                   placeholder="0.00"
                   value={amountA}
                   onChange={(e) => setAmountA(e.target.value)}
-                  className="bg-transparent text-2xl font-black text-white focus:outline-none w-full"
+                  className="bg-transparent text-3xl font-black text-white focus:outline-none w-full placeholder:text-slate-800"
                 />
-                <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-2xl border border-white/5">
+                <div className="flex items-center gap-2 bg-[#121026] px-3 py-1.5 rounded-xl border border-secondary/30">
                   <div className="w-4 h-4 rounded-full" style={{ backgroundColor: TOKENS.TOKEN_A.color }} />
-                  <span className="font-black text-xs">{TOKENS.TOKEN_A.symbol}</span>
+                  <span className="font-black text-xs text-slate-200">{TOKENS.TOKEN_A.symbol}</span>
                 </div>
               </div>
             </div>
 
             <div className="flex justify-center -my-6 relative z-10">
-              <div className="w-8 h-8 rounded-xl bg-[#020617] border border-white/5 flex items-center justify-center">
-                <Plus className="w-4 h-4 text-slate-500" />
+              <div className="w-8 h-8 rounded-lg bg-[#080711] border border-secondary/30 flex items-center justify-center shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                <Plus className="w-4 h-4 text-secondary" />
               </div>
             </div>
 
             {/* Input B */}
-            <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Deposit {TOKENS.TOKEN_B.symbol}</p>
+            <div className="bg-[#080711]/60 border border-secondary/20 rounded-xl p-6 transition-all focus-within:border-secondary/50">
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Deposit {TOKENS.TOKEN_B.symbol}</p>
               <div className="flex items-center justify-between gap-4">
                 <input
                   type="number"
                   placeholder="0.00"
                   value={amountB}
                   onChange={(e) => setAmountB(e.target.value)}
-                  className="bg-transparent text-2xl font-black text-white focus:outline-none w-full"
+                  className="bg-transparent text-3xl font-black text-white focus:outline-none w-full placeholder:text-slate-800"
                 />
-                <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-2xl border border-white/5">
+                <div className="flex items-center gap-2 bg-[#121026] px-3 py-1.5 rounded-xl border border-secondary/30">
                   <div className="w-4 h-4 rounded-full" style={{ backgroundColor: TOKENS.TOKEN_B.color }} />
-                  <span className="font-black text-xs">{TOKENS.TOKEN_B.symbol}</span>
+                  <span className="font-black text-xs text-slate-200">{TOKENS.TOKEN_B.symbol}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-primary/5 border border-primary/20 rounded-[2rem] p-6 space-y-4">
+          <div className="bg-secondary/5 border border-secondary/20 rounded-xl p-6 space-y-4">
             <div className="flex justify-between items-center text-[11px] font-bold uppercase tracking-widest">
-              <span className="text-slate-500">Predicted Share</span>
-              <span className="text-primary font-black">
+              <span className="text-slate-400">Predicted Share</span>
+              <span className="text-secondary font-black">
                 {poolStats ? "0.01%" : "0.00%"}
               </span>
             </div>
             <div className="flex justify-between items-center text-[11px] font-bold uppercase tracking-widest">
-              <span className="text-slate-500">Current Rate</span>
-              <span className="text-slate-300 font-mono">1 {TOKENS.TOKEN_A.symbol} = {poolStats?.priceAtoB} {TOKENS.TOKEN_B.symbol}</span>
+              <span className="text-slate-400">Current Rate</span>
+              <span className="text-slate-200 font-mono font-black">1 {TOKENS.TOKEN_A.symbol} = {poolStats?.priceAtoB} {TOKENS.TOKEN_B.symbol}</span>
             </div>
           </div>
 
           <button
             onClick={isConnected ? handleAdd : connectWallet}
             disabled={isConnected && (!amountA || !amountB || txStatus.status === "pending")}
-            className="btn-aura w-full"
+            className="btn-nova w-full shadow-[0_0_30px_rgba(255,0,122,0.3)]"
           >
             {txStatus.status === "pending" && <Loader2 className="w-5 h-5 animate-spin" />}
-            <span className="tracking-widest">
+            <span className="tracking-widest font-black">
               {!isConnected ? "CONNECT WALLET" : txStatus.status === "pending" ? "PROCESSING..." : "PROVIDE LIQUIDITY"}
             </span>
           </button>
         </div>
       ) : (
         <div className="space-y-6">
-          <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6">
+          <div className="bg-[#080711]/60 border border-secondary/20 rounded-xl p-6">
             <div className="flex justify-between items-center mb-4">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Withdraw LP Assets</p>
-              <span className="text-[10px] font-bold text-slate-500">Available: {myPosition?.lpBalance || "0.00"}</span>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Withdraw LP Assets</p>
+              <span className="text-[10px] font-bold text-slate-400">Available: <span className="font-mono font-black text-slate-200">{myPosition?.lpBalance || "0.00"}</span></span>
             </div>
             <div className="flex items-center justify-between gap-4">
               <input
@@ -148,30 +148,30 @@ export const LiquidityCard: React.FC = () => {
                 placeholder="0.00"
                 value={lpToRemove}
                 onChange={(e) => setLpToRemove(e.target.value)}
-                className="bg-transparent text-2xl font-black text-white focus:outline-none w-full"
+                className="bg-transparent text-3xl font-black text-white focus:outline-none w-full placeholder:text-slate-800"
               />
-              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-2xl border border-white/5">
+              <div className="flex items-center gap-2 bg-[#121026] px-3 py-1.5 rounded-xl border border-secondary/30">
                 <div className="w-4 h-4 rounded-full" style={{ backgroundColor: TOKENS.LP.color }} />
-                <span className="font-black text-xs">LP TOKENS</span>
+                <span className="font-black text-xs text-slate-200">LP TOKENS</span>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="crystal p-4 rounded-2xl bg-white/5">
-              <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest mb-2">Claim {TOKENS.TOKEN_A.symbol}</p>
-              <p className="text-lg font-black text-white">0.00</p>
+            <div className="crystal p-4 rounded-xl bg-[#080711]/40 border border-secondary/20">
+              <p className="text-[9px] text-slate-400 uppercase font-black tracking-widest mb-2">Claim {TOKENS.TOKEN_A.symbol}</p>
+              <p className="text-xl font-black text-white font-mono">0.00</p>
             </div>
-            <div className="crystal p-4 rounded-2xl bg-white/5">
-              <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest mb-2">Claim {TOKENS.TOKEN_B.symbol}</p>
-              <p className="text-lg font-black text-white">0.00</p>
+            <div className="crystal p-4 rounded-xl bg-[#080711]/40 border border-secondary/20">
+              <p className="text-[9px] text-slate-400 uppercase font-black tracking-widest mb-2">Claim {TOKENS.TOKEN_B.symbol}</p>
+              <p className="text-xl font-black text-white font-mono">0.00</p>
             </div>
           </div>
 
           <button
             onClick={isConnected ? handleRemove : connectWallet}
             disabled={isConnected && (!lpToRemove || txStatus.status === "pending")}
-            className="w-full py-4 rounded-[2rem] bg-danger/10 text-danger border border-danger/20 font-black text-xs uppercase tracking-[0.2em] transition-all active:scale-95 flex items-center justify-center gap-2 hover:bg-danger/20"
+            className="w-full py-4 rounded-xl bg-danger/10 text-danger border border-danger/30 font-black text-xs uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-2 hover:bg-danger/20 hover:shadow-[0_0_20px_rgba(255,0,85,0.2)]"
           >
             {txStatus.status === "pending" && <Loader2 className="w-5 h-5 animate-spin" />}
             {!isConnected ? "CONNECT WALLET" : "BURN LP ASSETS"}
@@ -224,7 +224,7 @@ export const LiquidityCard: React.FC = () => {
            </div>
            <p className="text-xl font-black text-white mb-2 uppercase tracking-tighter">Inventory Updated</p>
            <p className="text-xs text-slate-400 font-medium mb-8">Pool positions successfully adjusted.</p>
-           <button onClick={() => window.location.reload()} className="btn-aura !py-3 !px-8 text-xs !shadow-success/20">CONTINUE</button>
+           <button onClick={() => window.location.reload()} className="btn-nova !py-3 !px-8 text-xs !shadow-success/20">CONTINUE</button>
         </div>
       )}
 
